@@ -21,6 +21,23 @@ namespace SudokuReader
     /// </summary>
     public class GameSudoku
     {
+        SudokuPuzzle _default = new SudokuPuzzle
+        {
+            Id = 0,
+            Solution = new List<List<int>>()
+        {
+            new List<int>(){0,0,0,0,0,0,0,0,0 },
+            new List<int>(){0,0,0,0,0,0,0,0,0 },
+            new List<int>(){0,0,0,0,0,0,0,0,0 },
+            new List<int>(){0,0,0,0,0,0,0,0,0 },
+            new List<int>(){0,0,0,0,0,0,0,0,0 },
+            new List<int>(){0,0,0,0,0,0,0,0,0 },
+            new List<int>(){0,0,0,0,0,0,0,0,0 },
+            new List<int>(){0,0,0,0,0,0,0,0,0 },
+            new List<int>(){0,0,0,0,0,0,0,0,0 },
+            new List<int>(){0,0,0,0,0,0,0,0,0 },
+        }
+        };
         /// <summary>
         /// has the puzzle from the library
         /// </summary>
@@ -90,17 +107,31 @@ namespace SudokuReader
         /// </summary>
         private void ReadFile()
         {
-            History loadedHistory = History.LoadFromXml("history1.xml");
-
-            Puzzle = new SudokuPuzzle
+            if (File.Exists("history1.xml"))
             {
-                Id = loadedHistory.Puzzles[0].Id,
-                Solution = loadedHistory.Puzzles[0].Solution
-            };
+                History loadedHistory = History.LoadFromXml("history1.xml");
 
-            Initial = loadedHistory.Puzzles[0].Initial;
-            State = loadedHistory.Puzzles[0].State;
-            Level = loadedHistory.Puzzles[0].Level;
+                Puzzle = new SudokuPuzzle
+                {
+                    Id = loadedHistory.Puzzles[0].Id,
+                    Solution = loadedHistory.Puzzles[0].Solution
+                };
+
+                Initial = loadedHistory.Puzzles[0].Initial;
+                State = loadedHistory.Puzzles[0].State;
+                Level = loadedHistory.Puzzles[0].Level;
+            }
+            else
+            {
+                Puzzle = new SudokuPuzzle
+                {
+                    Id = _default.Id,
+                    Solution = ClonePuzzle(_default.Solution)
+                };
+                Level = Level.Easy;
+                State = CreateState();
+                Initial = ClonePuzzle(State);
+            }
 
         }
 

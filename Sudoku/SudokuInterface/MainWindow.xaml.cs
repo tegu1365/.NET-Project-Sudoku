@@ -43,7 +43,7 @@ namespace SudokuInterface
                     _ => Level.Easy
                 };
                 Random rnd= new Random();
-                int id = rnd.Next(1, library.Size()+1);
+                int id = rnd.Next(1, library.Size());
                 GameSudoku current = new GameSudoku(lv,library.GetPuzzle(id));
                 SudokuTable.FillGrid(current);
             }

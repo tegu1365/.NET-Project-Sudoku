@@ -17,8 +17,8 @@ namespace SudokuReader
     {
         private List<SudokuPuzzle> sudokuPuzzles;
         private XmlReader xmlReader;
-        private const string link = "..\\..\\..\\..\\SudokuReader\\xml\\sudoku.xml";
-
+        /// private const string link = "..\\..\\..\\..\\xml\\sudoku.xml";
+        private const string link = ".\\xml\\sudoku.xml";
         public SudokuLibrary()
         {
             sudokuPuzzles = ReadSudoku();
@@ -40,8 +40,8 @@ namespace SudokuReader
         private List<SudokuPuzzle> ReadSudoku()
         {
             List<SudokuPuzzle> puzzles = new List<SudokuPuzzle>();
-            string fullPath = Path.Combine(GetExecutingDirectory(), link);
-            xmlReader = XmlReader.Create(fullPath);
+            //string fullPath = Path.Combine(GetExecutingDirectory(), link);
+           // xmlReader = XmlReader.Create(fullPath);
             xmlReader = XmlReader.Create(link);
             while (xmlReader.Read())
             {
