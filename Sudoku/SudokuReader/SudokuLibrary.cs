@@ -9,13 +9,25 @@ using System.Xml;
 
 namespace SudokuReader
 {
-    public static class SudokuLibrary
+    /// <summary>
+    /// SudokuLibrary class main function is reading from xml
+    /// file with all sudoku puzzles (once in the start of the program) and functioning like library of them
+    /// </summary>
+    public class SudokuLibrary
     {
-        private static List<SudokuPuzzle> sudokuPuzzles=ReadSudoku();
-        private static XmlReader xmlReader;
-        private const string link = "..\\..\\..\\xml\\sudoku.xml";
+        private List<SudokuPuzzle> sudokuPuzzles;
+        private XmlReader xmlReader;
+        private const string link = "..\\..\\..\\..\\SudokuReader\\xml\\sudoku.xml";
 
-        private static string GetExecutingDirectory()
+        public SudokuLibrary()
+        {
+            sudokuPuzzles = ReadSudoku();
+        }
+        /// <summary>
+        /// Function for geting the right path to the file
+        /// </summary>
+        /// <returns></returns>
+        private string GetExecutingDirectory()
         {
             var location = Assembly.GetExecutingAssembly().Location;
             return Path.GetDirectoryName(location);
@@ -25,7 +37,7 @@ namespace SudokuReader
         /// Reads the xml file and creates list with all puzzles in file
         /// </summary>
         /// <returns></returns>
-        private static List<SudokuPuzzle> ReadSudoku()
+        private List<SudokuPuzzle> ReadSudoku()
         {
             List<SudokuPuzzle> puzzles = new List<SudokuPuzzle>();
             string fullPath = Path.Combine(GetExecutingDirectory(), link);
@@ -63,13 +75,30 @@ namespace SudokuReader
 
             return puzzles;
         }
-
-        public static SudokuPuzzle GetPuzzle(int id)
+        /// <summary>
+        /// Getting a puzzle by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public SudokuPuzzle GetPuzzle(int id)
         {
             return sudokuPuzzles.Find(puzzle => puzzle.Id == id);
         }
 
-        public static string ToString()
+        /// <summary>
+        /// How many puzzles are in the library
+        /// </summary>
+        /// <returns></returns>
+        public int Size()
+        {
+            return sudokuPuzzles.Count;
+        }
+
+        /// <summary>
+        /// ToString function for testing
+        /// </summary>
+        /// <returns></returns>
+        public string ToString()
         {
             string str = "";
             foreach (var puzzle in sudokuPuzzles)

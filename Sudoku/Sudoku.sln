@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuReader", "SudokuReader\SudokuReader.csproj", "{85A29718-32C1-4968-A66A-9D034AE85F43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SudokuReader", "SudokuReader\SudokuReader.csproj", "{85A29718-32C1-4968-A66A-9D034AE85F43}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DigitalClock", "..\DigitalClock\DigitalClock.csproj", "{9094FE70-F11D-4E4D-944A-5F38A9FE677B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SudokuInterface", "SudokuInterface\SudokuInterface.csproj", "{CDD3EF03-068A-4018-8F39-268ED82540AE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{85A29718-32C1-4968-A66A-9D034AE85F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85A29718-32C1-4968-A66A-9D034AE85F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85A29718-32C1-4968-A66A-9D034AE85F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9094FE70-F11D-4E4D-944A-5F38A9FE677B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9094FE70-F11D-4E4D-944A-5F38A9FE677B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9094FE70-F11D-4E4D-944A-5F38A9FE677B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9094FE70-F11D-4E4D-944A-5F38A9FE677B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDD3EF03-068A-4018-8F39-268ED82540AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDD3EF03-068A-4018-8F39-268ED82540AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDD3EF03-068A-4018-8F39-268ED82540AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDD3EF03-068A-4018-8F39-268ED82540AE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

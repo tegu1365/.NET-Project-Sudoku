@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace SudokuReader
 {
+    /// <summary>
+    /// Sudoku Puzzle class for basic puzzle type.
+    /// </summary>
     public class SudokuPuzzle
     {
         public int Id { get; set; }

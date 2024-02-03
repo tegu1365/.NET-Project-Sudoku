@@ -7,6 +7,9 @@ using System.Xml.Serialization;
 
 namespace SudokuReader
 {
+    /// <summary>
+    /// XML Serialization for Sudoku Game.
+    /// </summary>
     public class Sudoku
     {
         [XmlAttribute("id")]

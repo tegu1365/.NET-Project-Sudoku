@@ -8,6 +8,9 @@ using System.Xml;
 
 namespace SudokuReader
 {
+    /// <summary>
+    /// XML serilizer class for saving games
+    /// </summary>
     public class History
     {
         public List<Sudoku> Puzzles { get; set; }
